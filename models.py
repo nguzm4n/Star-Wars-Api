@@ -84,11 +84,11 @@ class Planet(db.Model):
 class Favorite(db.Model):
     __tablename__ = 'favorite'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     character_id = db.Column(db.Integer, db.ForeignKey(
-        'character.id'), nullable=False)
+        'character.id'))
     planet_id = db.Column(db.Integer, db.ForeignKey(
-        'planet.id'), nullable=False)
+        'planet.id'))
 
     def serialize(self):
         return {
